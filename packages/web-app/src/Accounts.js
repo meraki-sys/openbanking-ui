@@ -2,7 +2,8 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {
     getAccountList,
-    getAccountById,
+	getDebitList,
+	getAccountById,
     getAccountBalances,
     getAccountTransactions,
     getAccountDirectDebits,
@@ -29,6 +30,12 @@ const Accounts = () => {
                         onClick={() => getAccountList(dispatch)}
                     >
                         Get Account List
+                    </button>
+					<button
+                        className="buttonLinks"
+                        onClick={() => getAccountTransactions(dispatch, accountId)}
+                    >
+                        Get Latest Debits
                     </button>
                     <button
                         className="buttonLinks"
@@ -73,6 +80,8 @@ const Accounts = () => {
                         Get Account Standing Orders
                     </button>
                 </div>
+				<li><p><a href="http://localhost:4001">Preclosure of debts (go to payments)</a></p>
+				<p><a href="http://localhost:4001">View Savings Plans Offered</a></p></li>
                 <div className="displayInfo">
                     <InfoDisplay data={data} />
                 </div>

@@ -45,6 +45,12 @@ const Dashboard = () => {
                             >
                                 Payment Initiation Service Provider (PISP)
                             </button>
+							<button
+                                className="journeyBtn"
+                                // to do 
+                            >
+                                Welcome to Financial Plans (Savings/Insurance plan details)
+                            </button>
                         </div>
                     </div>
                 </div>

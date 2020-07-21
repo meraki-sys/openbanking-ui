@@ -15,6 +15,18 @@ export function getAccountList(dispatch) {
     })
 }
 
+export function getDebitList(dispatch) {
+    createRequest(dispatch, '/aisp/accounts/${accountId}/transactions', 'GET', null, {}, function (
+        response
+    ) {
+        //callback placeholder where one or multiple actions can be dispatched
+        //dispatch(setData(response))
+        if(response.Data.Transaction[0].CreditDebitIndicator="Debit"){
+            dispatch(setAccountId(response.Data.Transaction[0].AccountId))
+        }
+    })
+}
+
 // get account by id
 export function getAccountById(dispatch, accountId) {
     createRequest(
